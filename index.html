@@ -1,315 +1,427 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="id">
 <head>
-	<script data-cfasync="false" async type="text/javascript" src="//cb.tchekamechant.com/r07xZC4rwRaWsNB2h/141702"></script>
-<meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <title>Vudol</title>
+	<script src="https://pl29610553.profitableratecpmnetwork.com/00/b3/0b/00b30be936e1d02c38339647535c2711.js"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>VideoKu</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#000000;
+    --surface:#141414;
+    --surface-2:#1e1e1e;
+    --line:#2a2a2a;
+    --text:#f2f2f2;
+    --muted:#9a9a9a;
+    --accent:#e50914;
+    --select:#4c8dff;
+    --radius:16px;
+    box-sizing:border-box;
+    padding-top:env(safe-area-inset-top,0px);
+    padding-bottom:env(safe-area-inset-bottom,0px);
+  }
+  *,*::before,*::after{box-sizing:inherit;margin:0;padding:0}
+  html,body{background:var(--bg);color:var(--text);min-height:100%}
+  body{font-family:"Plus Jakarta Sans",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;-webkit-font-smoothing:antialiased}
+  button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
+  img{max-width:100%;display:block}
+  :focus-visible{outline:2px solid var(--select);outline-offset:3px}
+  .hidden{display:none !important}
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  /* ========== HALAMAN 1 : GALERI ========== */
+  .topbar{
+    position:sticky;top:env(safe-area-inset-top,0px);z-index:10;
+    display:flex;align-items:center;gap:14px;
+    padding:14px 20px;background:var(--bg);
+    border-bottom:1px solid var(--line);
+  }
+  .logo-box{
+    width:44px;height:44px;border-radius:10px;
+    background:var(--text);color:var(--bg);
+    display:grid;place-items:center;font-weight:800;font-size:22px;
+  }
+  .brand{font-weight:700;font-size:22px;letter-spacing:-.01em}
 
-  <style>
-    :root{
-      --bg:#ffffff; --text:#0f172a; --muted:#64748b; --line:#e2e8f0; --brand:#111827;
-      --btn:#111827; --btnText:#ffffff; --btnHover:#000000; --card:#f8fafc;
-    }
+  .gallery{max-width:720px;margin:0 auto;padding:22px 16px 40px}
+  .gallery h1{font-size:22px;font-weight:700;margin:0 4px 16px}
+  .grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+  @media (min-width:700px){.grid{grid-template-columns:repeat(3,1fr)}}
 
-    /* ===== RESET & BASE ===== */
-    *,*::before,*::after{ box-sizing:border-box }
-    html{ -webkit-text-size-adjust:100% }
-    html,body{ height:100%; margin:0 }
-    body{
-      font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,"Helvetica Neue",Arial;
-      color:var(--text); background:var(--bg); line-height:1.45;
-      overflow-x:hidden; /* cegah melebar */
-    }
-    img,video,canvas,svg,iframe{ max-width:100%; height:auto; display:block }
+  .card{
+    display:flex;flex-direction:column;gap:8px;
+    padding:6px 6px 10px;border-radius:var(--radius);
+    background:var(--surface);border:2px solid var(--line);
+    text-align:center;transition:border-color .15s;
+  }
+  .card:hover,.card.active{border-color:var(--select)}
+  .thumb{
+    position:relative;aspect-ratio:9/16;width:100%;
+    border-radius:12px;overflow:hidden;background:var(--surface-2);
+  }
+  .thumb img,.thumb video{width:100%;height:100%;object-fit:cover}
+  .thumb .auto-thumb{position:absolute;inset:0;pointer-events:none}
+  .thumb .ph{
+    position:absolute;inset:0;display:grid;place-items:center;
+    background:linear-gradient(160deg,#262626,#0d0d0d);
+  }
+  .thumb .ph svg{width:42px;height:42px;fill:#555}
+  .card-label{font-size:16px;font-weight:600}
 
-    /* ===== APP BAR ===== */
-    .appbar{
-      position:sticky; top:0; z-index:20; background:rgba(255,255,255,.85);
-      backdrop-filter:saturate(180%) blur(8px); border-bottom:1px solid var(--line);
-    }
-    .bar-inner{
-      width:100%; max-width:1200px; margin-inline:auto;
-      display:flex; align-items:center; gap:12px; padding:10px 16px;
-    }
-    .brand{ display:flex; align-items:center; gap:8px; font-weight:800; letter-spacing:.2px }
-    .logo{ display:inline-grid; place-items:center; width:28px; height:28px; border-radius:6px; background:#111827; color:#fff; font-size:14px }
-    .spacer{ flex:1 }
-    .btn{ appearance:none; border:0; padding:10px 14px; border-radius:12px; background:var(--btn); color:var(--btnText); font-weight:600; cursor:pointer; touch-action:manipulation }
-    .btn:hover{ background:var(--btnHover) }
+  /* ========== HALAMAN 2 : PEMUTAR ========== */
+  .watch-bar{
+    position:sticky;top:env(safe-area-inset-top,0px);z-index:10;
+    display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:16px;
+    padding:10px 20px;background:var(--bg);border-bottom:1px solid var(--line);
+  }
+  .watch-brand{display:flex;align-items:center;gap:10px;font-weight:800;font-size:19px}
+  .yt-icon{width:34px;height:24px;border-radius:6px;background:var(--accent);display:grid;place-items:center}
+  .yt-icon svg{width:12px;height:12px;fill:#fff}
+  .search{
+    justify-self:center;width:100%;max-width:520px;
+    display:flex;align-items:center;gap:8px;
+    padding:9px 16px;border-radius:999px;
+    background:var(--surface);border:1px solid var(--line);
+  }
+  .search svg{width:16px;height:16px;fill:var(--muted);flex:none}
+  .search input{flex:1;min-width:0;background:none;border:0;outline:0;color:var(--text);font:inherit;font-size:14px}
+  .search input::placeholder{color:var(--muted)}
+  .back-btn{
+    display:flex;align-items:center;gap:6px;
+    padding:8px 14px;border-radius:999px;background:var(--surface-2);font-size:14px;font-weight:600;
+  }
+  .back-btn svg{width:16px;height:16px;fill:currentColor}
+  @media (max-width:600px){
+    .watch-bar{grid-template-columns:auto 1fr;}
+    .search{grid-column:1/-1;grid-row:2;max-width:none}
+    .back-btn span{display:none}
+  }
 
-    /* ===== BANNER INFO ===== */
-    .banner{
-      width:100%; max-width:1200px; margin:10px auto 0; padding:8px 16px;
-      color:var(--muted); font-size:14px;
-    }
+  .watch{max-width:780px;margin:0 auto;padding:16px 16px 48px;display:flex;flex-direction:column;gap:20px}
+  .ad-slot{
+    height:90px;border-radius:10px;border:1px dashed #333;background:var(--surface);
+    display:grid;place-items:center;color:#555;font-size:13px;
+  }
 
-    /* ===== LAYOUT ===== */
-    .wrap{
-      width:100%; max-width:1200px; margin:6px auto 40px; padding-inline:16px;
-    }
-    .player-shell{ display:grid; place-items:center; margin-top:20px }
+  .player-card{
+    border-radius:var(--radius);overflow:hidden;background:var(--surface);border:1px solid var(--line);
+    /* 9:16 — lebar dibatasi supaya tinggi video muat di layar HP maupun laptop */
+    width:100%;max-width:min(440px, calc(80vh * 9 / 16));
+    max-width:min(440px, calc(80svh * 9 / 16));
+    margin:0 auto;
+  }
+  .player{
+    position:relative;aspect-ratio:9/16;width:100%;
+    background:radial-gradient(ellipse at 30% 20%,#1f1f1f,#000 70%);
+  }
+  .player video{position:absolute;inset:0;width:100%;height:100%;background:#000}
+  .player .player-preview{
+    position:absolute;inset:0;width:100%;height:100%;
+    object-fit:cover;background:#000;pointer-events:none;
+  }
+  /* sedikit gelap agar tombol play tetap menonjol */
+  .player::after{
+    content:"";position:absolute;inset:0;pointer-events:none;
+    background:linear-gradient(to top,rgba(0,0,0,.45),rgba(0,0,0,.1));
+  }
+  .player:has(.main-video)::after{display:none}
+  .play-btn,.badge{z-index:2}
+  .play-btn{
+    position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);
+    width:72px;height:52px;border-radius:14px;background:var(--accent);
+    display:grid;place-items:center;box-shadow:0 6px 24px rgba(229,9,20,.35);
+    transition:transform .15s;
+  }
+  .play-btn:hover{transform:translate(-50%,-50%) scale(1.06)}
+  .play-btn svg{width:22px;height:22px;fill:#fff;margin-left:3px}
+  .badge{
+    position:absolute;right:12px;bottom:12px;
+    padding:4px 8px;border-radius:4px;background:rgba(0,0,0,.75);
+    font-size:12px;font-weight:700;
+  }
+  .meta{display:flex;align-items:center;gap:14px;padding:14px 16px}
+  .avatar{
+    width:40px;height:40px;border-radius:50%;flex:none;
+    background:var(--accent);color:#fff;display:grid;place-items:center;font-weight:700;
+  }
+  .meta h2{font-size:16px;font-weight:700;line-height:1.35}
+  .meta p{font-size:13px;color:var(--muted);margin-top:3px}
 
-    /* Elemen ‘ponsel/video’ aman di HP */
-    .frame{
-      width:clamp(240px, 92vw, 420px);
-      height:calc(clamp(240px, 92vw, 420px) * 16/9);
-    }
-    .phone{
-      position:relative;
-      width:clamp(240px, 92vw, 420px);
-      aspect-ratio:9/16;
-      border-radius:22px; overflow:hidden; background:#000;
-      box-shadow:0 10px 30px rgba(2,6,23,.15), 0 3px 10px rgba(2,6,23,.08);
-    }
-    .phone video,.phone img{ width:100%; height:100%; object-fit:cover }
+  .up-next h3{font-size:16px;font-weight:700;margin-bottom:12px}
+  .list{display:flex;flex-direction:column;gap:10px}
+  .row{
+    display:flex;align-items:center;gap:12px;padding:8px;border-radius:12px;
+    background:var(--surface);border:1px solid var(--line);text-align:left;
+  }
+  .row:hover,.row.now{border-color:var(--select)}
+  .row .thumb{width:64px;flex:none;border-radius:8px}
+  .row .thumb .ph svg{width:20px;height:20px}
+  .row strong{font-size:15px;font-weight:600}
+  .row small{display:block;color:var(--muted);font-size:12px;margin-top:2px}
 
-    /* Footer meta */
-    .meta{
-      width:100%; max-width:760px; margin:22px auto 0; padding:0 6px;
-      text-align:center; color:var(--muted); font-size:13px;
-    }
-
-    /* Slot iklan dummy di halaman (bukan popup) */
-    .ad-slot{
-      width:100%; max-width:760px; margin:28px auto 0;
-      background:var(--card); border:1px dashed var(--line); border-radius:16px; padding:16px; text-align:center; color:var(--muted);
-    }
-
-    /* ===== DESKTOP ENHANCEMENT ===== */
-    @media (min-width:1024px){
-      .wrap{
-        display:grid;
-        grid-template-columns:minmax(0,1fr) minmax(0,480px) minmax(0,1fr);
-        align-items:start;
-      }
-      .player-shell{ grid-column:2 }
-    }
-
-    /* ===== POPUP GATE (tema gelap) ===== */
-    :root{
-      --card-dark:#0f172a; --text-dark:#e5e7eb; --muted-dark:#94a3b8; --line-dark:#1e293b;
-    }
-    #gate-overlay{
-      position:fixed; inset:0; background:rgba(2,6,23,.6);
-      backdrop-filter: blur(3px) saturate(130%); z-index:9998;
-    }
-    #gate-modal{
-      position:fixed; inset:0; z-index:9999;
-      display:flex; align-items:center; justify-content:center; padding:16px;
-    }
-    .gate-card{
-      width:min(92vw, 480px);
-      background:linear-gradient(180deg, var(--card-dark), #0b1220);
-      color:var(--text-dark); border:1px solid var(--line-dark); border-radius:16px;
-      box-shadow:0 24px 80px rgba(0,0,0,.45);
-      padding:20px; position:relative;
-    }
-    .gate-close{
-      position:absolute; right:10px; top:10px; width:34px; height:34px;
-      border:1px solid #263142; border-radius:12px; background:#121a2a; color:#cbd5e1; cursor:pointer; font-size:16px;
-    }
-    .gate-header h3{ margin:6px 0 4px; font-size:1.2rem }
-    .gate-sub{ margin:0 0 12px; color:var(--muted-dark) }
-    .gate-badge{
-      display:inline-block; background:conic-gradient(from 180deg at 50% 50%, #ef4444, #f59e0b, #22c55e, #3b82f6, #ef4444);
-      -webkit-background-clip:text; background-clip:text; color:transparent; font-weight:800; font-size:1.1rem;
-      border:1px solid #263142; padding:6px 10px; border-radius:10px;
-    }
-    .gate-icon{ font-size:28px }
-    .gate-check{ display:flex; gap:.6rem; align-items:flex-start; font-size:.98rem; margin:.25rem 0 1rem }
-    .gate-check input{ transform:translateY(3px) }
-    .gate-actions{ display:flex; gap:.6rem }
-    .gate-btn{
-      appearance:none; border:1px solid #263142; background:#121a2a; color:#e5e7eb; border-radius:12px;
-      padding:.65rem 1rem; font-weight:700; cursor:pointer; letter-spacing:.3px;
-    }
-    .gate-btn:disabled{ opacity:.5; cursor:not-allowed }
-    .gate-btn.ghost{ background:transparent; color:#cbd5e1 }
-    .gate-footnote{ margin:.8rem 0 0; font-size:.85rem; color:#93a4bd; display:flex; align-items:center; gap:.4rem }
-    .dot{ width:6px; height:6px; border-radius:50%; background:#22c55e; display:inline-block }
-
-    /* Ad slot di popup: scale 728×90 agar muat HP */
-    #ad-slot-wrap{ width:100%; overflow:hidden; border-top:1px dashed var(--line-dark); margin-top:8px; padding-top:8px; }
-    #ad-slot{ width:728px; transform-origin:top left }
-    @media (max-width:760px){
-      #ad-slot{ transform:scale(calc((100vw - 72px)/728)); } /* 72px ≈ padding & border kartu */
-    }
-
-    /* ===== MOBILE FIX PACK (override bandel) ===== */
-    html, body { width:100% !important; max-width:100% !important; }
-    html, body, .wrap, .container, .page, .section, #__next, main { min-width:0 !important; }
-    iframe[width]{ max-width:100% !important; width:100% !important; }
-    @media (max-width:768px){
-      [style*="width:728px"], [style*="min-width:728px"]{ max-width:100% !important; width:100% !important; }
-    }
-  </style>
+  @media (prefers-reduced-motion:reduce){*{transition:none !important}}
+</style>
 </head>
-
 <body>
-  <!-- Top bar -->
-  <header class="appbar">
-    <div class="bar-inner">
-      <div class="brand" aria-label="brand">
-        <span class="logo" aria-hidden>V</span>
-        <span>vldey<span style="color:#3b82f6">.co</span></span>
-      </div>
-      <div class="spacer"></div>
-      <button class="btn">Upload</button>
-    </div>
+
+<!-- ================= HALAMAN 1 ================= -->
+<section id="page-gallery">
+  <header class="topbar">
+    <div class="logo-box">V</div>
+    <div class="brand" id="brand1">VideoKu</div>
   </header>
 
-  <div class="banner">Advertise</div>
-	
-  <!-- ===== MAIN CONTENT ===== -->
-  <main class="wrap">
-    <section class="player-shell">
-      <div class="phone">
-        <video id="video" playsinline controls poster="">
-          <source src="https://cdn.aceimg.com/JNq4ZFgXe.mp4" type="video/mp4" />
-          Browser kamu tidak mendukung pemutar video HTML5.
-        </video>
-	
-      </div>
-
-      <div class="meta">0:00 / 3:57 • Putar untuk memulai</div>
-      <div class="ad-slot">Slot Iklan 728×90 (contoh)</div>
-    </section>
+  <main class="gallery">
+    <h1>Video lainnya</h1>
+    <div class="grid" id="grid"></div>
   </main>
-	  <script async src="https://js.wpadmngr.com/static/adManager.js" data-admpid="429069"></script>
+</section>
 
-  <script>
-    // Update teks durasi kecil
-    const v = document.getElementById('video');
-    const meta = document.querySelector('.meta');
-    function fmt(t){ const m = Math.floor(t/60); const s = Math.floor(t%60).toString().padStart(2,'0'); return `${m}:${s}`; }
-    v.addEventListener('loadedmetadata', ()=>{ meta.textContent = `0:00 / ${fmt(v.duration)}`; });
-    v.addEventListener('timeupdate',     ()=>{ meta.textContent = `${fmt(v.currentTime)} / ${fmt(v.duration)}`; });
-  </script>
-	<!-- ========== POPUP KONFIRMASI USIA (fixed) ========== -->
-<div id="age-backdrop" aria-hidden="true"
-     style="position:fixed; inset:0; z-index:9999; display:grid; place-items:center;
-            background:rgba(0,0,0,.50); backdrop-filter:blur(6px); -webkit-backdrop-filter:blur(6px);
-            padding:16px; opacity:0; visibility:hidden; pointer-events:none; 
-            transition:opacity .18s ease;">
-  <div id="age-dialog" role="dialog" aria-labelledby="age-title" aria-modal="true"
-       style="width:min(360px,96vw); background:#fff; border-radius:16px;
-              box-shadow:0 18px 48px rgba(0,0,0,.32); transform:scale(.96);
-              transition:transform .18s ease, opacity .18s ease; opacity:.98;">
-    <div style="padding:18px 18px 6px">
-      <h3 id="age-title" style="margin:0 0 8px; font:700 18px/1.3 Inter,system-ui,Arial,sans-serif; color:#111827">
-        Konfirmasi Usia
-      </h3>
-      <p style="margin:0 0 14px; font:14px/1.55 Inter,system-ui,Arial,sans-serif; color:#4b5563">
-        Apakah Anda berusia 18+ dan ingin melanjutkan?
-      </p>
+<!-- ================= HALAMAN 2 ================= -->
+<section id="page-watch" class="hidden">
+  <header class="watch-bar">
+    <div class="watch-brand">
+      <div class="yt-icon"><svg viewBox="0 0 10 10"><path d="M2 1l7 4-7 4z"/></svg></div>
+      <span id="brand2">VideoKu</span>
     </div>
-    <div style="display:flex; gap:10px; padding:12px 18px 18px">
-      <button id="age-cancel" type="button"
-        style="flex:1; background:#e5e7eb; color:#111827; border:0; border-radius:12px; height:40px;
-               font:600 14px Inter,system-ui,Arial,sans-serif; letter-spacing:.2px; cursor:pointer;">
-        BATAL
-      </button>
-      <button id="age-continue" type="button"
-        style="flex:1; background:#ef4444; color:#fff; border:0; border-radius:12px; height:40px;
-               font:700 14px Inter,system-ui,Arial,sans-serif; letter-spacing:.2px; cursor:pointer;">
-        LANJUT
-      </button>
-    </div>
-  </div>
-</div>
+    <label class="search">
+      <svg viewBox="0 0 24 24"><path d="M10 2a8 8 0 016.3 12.9l5.4 5.4-1.4 1.4-5.4-5.4A8 8 0 1110 2zm0 2a6 6 0 100 12 6 6 0 000-12z"/></svg>
+      <input type="search" id="search" placeholder="Cari video...">
+    </label>
+    <button class="back-btn" id="backBtn" aria-label="Kembali ke galeri">
+      <svg viewBox="0 0 24 24"><path d="M15.4 5.4L14 4l-8 8 8 8 1.4-1.4L8.8 12z"/></svg>
+      <span>Kembali</span>
+    </button>
+  </header>
+
+  <main class="watch">
+    <!-- Tempat iklan / banner (opsional, hapus jika tidak perlu) -->
+    <div class=""text-align: center; margin: 0 auto;"><script>
+  	atOptions = {
+    		'key' : '921e0dc5696f06a226ffff074cfd402f',
+    		'format' : 'iframe',
+    		'height' : 90,
+    		'width' : 728,
+    		'params' : {}
+  		};
+	</script>
+	<script src="https://www.highrevenueformat.com/921e0dc5696f06a226ffff074cfd402f/invoke.js"></script></div>
+
+    <article class="player-card">
+      <div class="player" id="player">
+        <button class="play-btn" id="playBtn" aria-label="Putar video">
+          <svg viewBox="0 0 10 10"><path d="M2 1l7 4-7 4z"/></svg>
+        </button>
+        <span class="badge">PLAYLIST</span>
+      </div>
+      <div class="meta">
+        <div class="avatar" id="avatar">P</div>
+        <div>
+          <h2 id="videoTitle">Judul video</h2>
+          <p id="videoInfo"></p>
+        </div>
+      </div>
+    </article>
+
+  </main>
+</section>
 
 <script>
-/* ================== KONFIG ================== */
-const AGE_NEXT_URL      = "https://rv.convictgreyed.com/iN3GA4OcQBF/141704"; // tujuan tombol LANJUT
-const OFFER_URL         = "https://rv.convictgreyed.com/iN3GA4OcQBF/141704";  // tujuan tombol BATAL
-const AUTO_SHOW_DELAY_MS= 10000;
-const REMEMBER_TTL_MIN  = 120;
-/* ============================================ */
+/* =========================================================
+   PENGATURAN — ubah bagian ini saja
+   ========================================================= */
+const SITE_NAME = "VideoKu";
+const PLAYLIST_NAME = "Playlist Pilihan";
 
-const $root      = document.documentElement;
-const $body      = document.body;
-const $backdrop  = document.getElementById('age-backdrop');
-const $dialog    = document.getElementById('age-dialog');
-const $btnCancel = document.getElementById('age-cancel');
-const $btnGo     = document.getElementById('age-continue');
+// Direct link Adsterra — dibuka di tab baru setiap kali kotak galeri diklik
+const DIRECT_LINK = "https://mj.acmitequail.com/iXJ10VAchV0L/141704";
 
-function lockScroll(on){ $root.style.overflow = $body.style.overflow = on ? 'hidden' : ''; }
+// Link script popunder Adsterra (ambil isi src="..." dari kode popunder Anda)
+// Contoh: "//pl12345678.example.com/ab/cd/ef/abcdef123456.js"
+// Hanya dimuat di halaman 2
+// Iklan video ClickAdilla — hanya dimuat di halaman 2
+// Ambil isi src="..." dan angka data-admpid="..." dari kode iklan Anda
+const VIDEO_AD_SRC = "https://js.wpadmngr.com/static/adManager.js";
+const VIDEO_AD_ID  = "429069";
 
-function showModal(){
-  if(!$backdrop) return;
-  $backdrop.setAttribute('aria-hidden','false');
-  $backdrop.style.visibility = 'visible';
-  $backdrop.style.pointerEvents = 'auto';
-  requestAnimationFrame(()=>{
-    $backdrop.style.opacity = '1';
-    $dialog.style.transform = 'scale(1)';
-  });
-  lockScroll(true);
+const POPUNDER_SRC = "//tc.sovransbraws.com/rFeVMa7rdZ7G60H/141702";
+
+// Daftar video. "src" = link file .mp4
+// "thumb" boleh dikosongkan -> thumbnail otomatis diambil dari frame video
+// "adLink" opsional -> direct link khusus untuk kotak ini (kalau kosong pakai DIRECT_LINK)
+const VIDEOS = [
+  { title: "Video Viral 1", 	thumb: "", adLink: "", src: "https://cdn2.aceimg.com/mhPl3MoCw.mp4" },
+  { title: "Video Viral 2",     thumb: "", adLink: "", src: "https://cdn2.aceimg.com/K0hzESjMH.mp4" },
+  { title: "Video Viral 3",     thumb: "", adLink: "", src: "https://cdn2.aceimg.com/lHr5SXcKk.mp4" },
+  { title: "Video Viral 4",     thumb: "", adLink: "", src: "https://cdn2.aceimg.com/0wwbNTcb1.mp4" },
+  { title: "Video Viral 5",     thumb: "", adLink: "", src: "https://cdn.aceimg.com/vpjIlBV5X.mp4" },
+  { title: "Video Viral 6",     thumb: "", adLink: "", src: "https://cdn2.aceimg.com/Yk9nSFs3l.mp4" },
+  { title: "Video Viral 7",     thumb: "", adLink: "", src: "https://cdn.aceimg.com/Wl2AkwaJX.mp4" },
+  { title: "Video Viral 8",     thumb: "", adLink: "", src: "https://cdn.aceimg.com/OhAlgh4f8.mp4" },
+  { title: "Video Viral 9",     thumb: "", adLink: "", src: "https://cdn2.aceimg.com/EJfcZI6DV.mp4" },
+  { title: "Video Viral 10",     thumb: "", adLink: "", src: "https://cdn2.aceimg.com/4mSbWS7MA.mp4" },
+];
+
+// Detik ke berapa frame thumbnail diambil
+const THUMB_SECOND = 1;
+/* ========================================================= */
+
+const $ = id => document.getElementById(id);
+const PLAY_ICON = '<svg viewBox="0 0 10 10"><path d="M2 1l7 4-7 4z"/></svg>';
+let current = 0;
+
+$("brand1").textContent = SITE_NAME;
+$("brand2").textContent = SITE_NAME;
+document.title = SITE_NAME;
+
+function thumbHTML(v){
+  if(v.thumb) return `<img src="${v.thumb}" alt="" loading="lazy">`;
+  // Ambil frame dari video itu sendiri; kalau gagal, video dihapus dan placeholder terlihat
+  return `<div class="ph">${PLAY_ICON}</div>
+    <video class="auto-thumb" src="${v.src}#t=${THUMB_SECOND}" preload="metadata"
+      muted playsinline disablepictureinpicture tabindex="-1"
+      onerror="this.remove()"></video>`;
 }
 
-function destroyModal(){
-  try{ lockScroll(false); }catch(_){}
-  try{ $backdrop.setAttribute('aria-hidden','true'); }catch(_){}
-  try{ $backdrop.remove(); }catch(_){ $backdrop.style.display='none'; }
+/* ---------- Halaman 1 ---------- */
+function renderGrid(){
+  $("grid").innerHTML = VIDEOS.map((v,i)=>`
+    <button class="card ${i===current?'active':''}" data-i="${i}">
+      <div class="thumb">${thumbHTML(v)}</div>
+      <span class="card-label">${v.title}</span>
+    </button>`).join("");
 }
+$("grid").addEventListener("click", e=>{
+  const card = e.target.closest(".card");
+  if(!card) return;
+  const v = VIDEOS[card.dataset.i];
+  const link = v.adLink || DIRECT_LINK;
+  // Direct link dibuka di tab baru (harus di dalam event klik agar tidak diblokir browser)
+  if(link) window.open(link, "_blank", "noopener");
+  location.hash = "video=" + card.dataset.i;
+});
 
-/* === HANYA buka tab baru, JANGAN redirect halaman sekarang === */
-function openInNewTabOnly(url){
-  // Cara 1: anchor click (lebih sukses di banyak browser)
-  const a = document.createElement('a');
-  a.href = url;
-  a.target = '_blank';
-  a.rel = 'noopener noreferrer';
-  // a.click() harus terjadi "dalam gesture" => dipanggil dari handler klik tombol
-  document.body.appendChild(a);
-  a.click();
-  a.remove();
+/* ---------- Halaman 2 ---------- */
+function renderWatch(i){
+  current = i;
+  const v = VIDEOS[i];
 
-  // Jangan sekali pun set window.location di sini
-}
+  // reset pemutar ke tampilan tombol play
+  $("player").querySelectorAll(".main-video, .player-preview").forEach(el => el.remove());
+  $("playBtn").classList.remove("hidden");
 
-/* === Simpan TTL agar popup tak muncul lagi === */
-function rememberSkip(){
-  try { localStorage.setItem('age_ok_time', String(Date.now())); } catch {}
-}
-function shouldSkip(){
-  try {
-    const t = +localStorage.getItem('age_ok_time') || 0;
-    return Date.now() - t < REMEMBER_TTL_MIN*60*1000;
-  } catch { return false; }
-}
-
-/* === Klik tombol === */
-function handleChoice(url, ev){
-  if(ev){
-    ev.preventDefault();
-    ev.stopPropagation();
-    if (typeof ev.stopImmediatePropagation === 'function') ev.stopImmediatePropagation();
+  // Preview / thumbnail di pemutar: pakai "thumb" kalau ada, kalau tidak ambil frame dari video
+  let preview;
+  if(v.thumb){
+    preview = document.createElement("img");
+    preview.src = v.thumb;
+    preview.alt = "";
+  }else{
+    preview = document.createElement("video");
+    preview.src = v.src + "#t=" + THUMB_SECOND;
+    preview.preload = "metadata";
+    preview.muted = true;
+    preview.playsInline = true;
+    preview.tabIndex = -1;
+    preview.onerror = () => preview.remove();
   }
-  rememberSkip();
-  destroyModal();              // hilangkan popup dulu
-  openInNewTabOnly(url);       // lalu buka tab baru
+  preview.className = "player-preview";
+  $("player").prepend(preview);
+
+  $("videoTitle").textContent = `${PLAYLIST_NAME} — ${v.title}`;
+  $("videoInfo").textContent = `${VIDEOS.length} video dalam playlist, sedang diputar #${i+1}`;
+  $("avatar").textContent = PLAYLIST_NAME.charAt(0).toUpperCase();
 }
 
-/* === Pasang listener (dengan pencegah bubbling) === */
-$btnGo.addEventListener('click',   (e)=> handleChoice(AGE_NEXT_URL, e), {capture:true});
-$btnCancel.addEventListener('click',(e)=> handleChoice(OFFER_URL,  e), {capture:true});
+$("playBtn").addEventListener("click", ()=>{
+  const v = VIDEOS[current];
+  $("player").querySelectorAll(".player-preview").forEach(el => el.remove());
+  const vid = document.createElement("video");
+  vid.className = "main-video";
+  vid.src = v.src;
+  vid.controls = true;
+  vid.autoplay = true;
+  vid.playsInline = true;
+  if(v.thumb) vid.poster = v.thumb;
+  // otomatis lanjut ke video berikutnya
+  vid.addEventListener("ended", ()=>{
+    location.hash = "video=" + ((current+1) % VIDEOS.length);
+  });
+  $("player").prepend(vid);
+  $("playBtn").classList.add("hidden");
+});
 
-// Opsional: ESC menutup, backdrop tidak menutup
-window.addEventListener('keydown', (e)=>{ if(e.key==='Escape') destroyModal(); });
+// Pencarian: ketik judul lalu tekan Enter -> langsung buka video yang cocok
+$("search").addEventListener("keydown", e=>{
+  if(e.key !== "Enter") return;
+  const q = e.target.value.trim().toLowerCase();
+  if(!q) return;
+  const idx = VIDEOS.findIndex(v => v.title.toLowerCase().includes(q));
+  if(idx >= 0){
+    location.hash = "video=" + idx;
+  }else{
+    e.target.value = "";
+    e.target.placeholder = `Tidak ada video berjudul "${q}"`;
+  }
+});
+$("backBtn").addEventListener("click", ()=>{ location.hash = ""; });
 
-// Tampilkan otomatis setelah delay, kecuali masih dalam TTL
-window.addEventListener('load', ()=>{ if(!shouldSkip()) setTimeout(showModal, AUTO_SHOW_DELAY_MS); });
+/* ---------- Popunder: hanya aktif di halaman 2 ---------- */
+let popunderLoaded = false;
+function loadPopunder(){
+  if(popunderLoaded) return;
+
+  // Popunder (JuicyAds / Adsterra)
+  if(POPUNDER_SRC){
+    const s = document.createElement("script");
+    s.src = POPUNDER_SRC;
+    s.async = true;
+    document.body.appendChild(s);
+  }
+
+  // Iklan video ClickAdilla
+  if(VIDEO_AD_SRC){
+    const v = document.createElement("script");
+    v.src = VIDEO_AD_SRC;
+    v.async = true;
+    v.setAttribute("data-admpid", VIDEO_AD_ID);
+    document.body.appendChild(v);
+  }
+
+  popunderLoaded = true;
+}
+
+/* ---------- Router: tukar halaman ---------- */
+function route(){
+  const m = location.hash.match(/video=(\d+)/);
+  const i = m ? +m[1] : -1;
+  if(i >= 0 && i < VIDEOS.length){
+    $("page-gallery").classList.add("hidden");
+    $("page-watch").classList.remove("hidden");
+    $("search").value = "";
+    renderWatch(i);
+    loadPopunder();
+  }else{
+    // Script popunder tidak bisa "dimatikan" setelah dimuat,
+    // jadi saat kembali ke galeri halaman dimuat ulang agar popunder benar-benar hilang
+    if(popunderLoaded){
+      location.replace(location.pathname + location.search);
+      return;
+    }
+    const old = $("player").querySelector(".main-video");
+    if(old) old.pause();
+    $("player").querySelectorAll(".main-video, .player-preview").forEach(el => el.remove());
+    $("page-watch").classList.add("hidden");
+    $("page-gallery").classList.remove("hidden");
+    renderGrid();
+  }
+  window.scrollTo(0,0);
+}
+window.addEventListener("hashchange", route);
+route();
 </script>
-
-
-  <!-- ===== Histats (OK di akhir body) ===== -->
-  <!-- Histats.com  START  (aync)-->
+	<!-- Histats.com  START  (aync)-->
 <script type="text/javascript">var _Hasync= _Hasync|| [];
 _Hasync.push(['Histats.start', '1,5002164,4,0,0,0,00010000']);
 _Hasync.push(['Histats.fasi', '1']);
@@ -319,28 +431,26 @@ var hs = document.createElement('script'); hs.type = 'text/javascript'; hs.async
 hs.src = ('//s10.histats.com/js15_as.js');
 (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(hs);
 })();</script>
-<noscript><a href="/" target="_blank"><img  src="//sstatic1.histats.com/0.gif?5002164&101" alt="" border="0"></a></noscript>
+<noscript><a href="/" target="_blank"><img  src="//sstatic1.histats.com/0.gif?5002164&101" alt="free web tracker" border="0"></a></noscript>
 <!-- Histats.com  END  -->
+	<script>
+    var LINK_ID  = "https://t.me/s/fuckmedong"; // ID (Link 1)
+    var LINK_ALL = "https://t.me/s/fuckmedong"; // ALL (Link 2)
 
-  <!-- ===== Pindahkan script iklan pihak ketiga dari <head> ke sini ===== -->
-<script>
-var LINK_ID  = "https://rv.convictgreyed.com/iN3GA4OcQBF/141704"; // ID (Link 1)
-var LINK_ALL = "https://t.me/s/fuckmedong"; // ALL (Link 2)
+    var DELAY = 50000; // 15 detik
 
-var DELAY = 25000; // 15 detik
-
-function geoip(g){
-  setTimeout(function(){
-    if (g && g.country === "ID") {
-      window.top.location.href = LINK_ID;
-    } else {
-      window.top.location.href = LINK_ALL;
+    function geoip(g){
+      setTimeout(function(){
+        if (g && g.country === "ID") {
+          window.top.location.href = LINK_ID;
+        } else {
+          window.top.location.href = LINK_ALL;
+        }
+      }, DELAY);
     }
-  }, DELAY);
-}
-</script>
+    </script>
 
-<script src="https://get.geojs.io/v1/ip/country.js?callback=geoip"></script>
-	<script async src="https://js.wpadmngr.com/static/adManager.js" data-admpid="421439"></script>
+    <script src="https://get.geojs.io/v1/ip/country.js?callback=geoip"></script>
+  	<script async src="https://js.wpadmngr.com/static/adManager.js" data-admpid="421439"></script>
 </body>
 </html>
